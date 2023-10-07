@@ -11,11 +11,7 @@ export default function NavBar() {
           </h1>
           <img src="img/logo.png" alt="Logo" />
         </Link>
-        <button
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
+        <button type="button">
           <span></span>
         </button>
         <Menu />
@@ -35,7 +31,12 @@ export default function NavBar() {
                 Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
                 sed stet lorem sit clita duo justo magna dolore erat amet
               </p>
-              <Link to="/cart">Open cart &rarr;</Link>
+              <Link
+                to="/cart"
+                className="hover:text-blue-9 00 text-sm text-blue-900"
+              >
+                Open cart &rarr;
+              </Link>
             </div>
             <div>
               <img src="img/hero.png" alt="" />
