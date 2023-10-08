@@ -3,21 +3,20 @@ import Menu from "../Menu";
 
 export default function NavBar() {
   return (
-    <div>
-      <nav>
-        <Link to="/">
+    // position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem
+    <>
+      {/* navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0 */}
+      {/* // flex-wrap:nowrap;justify-content:flex-start */}
+      <nav className="relative z-[12] flex flex-wrap items-center justify-between px-4 py-3 pb-2 pt-2 opacity-90 lg:flex-nowrap lg:justify-start lg:px-5 lg:py-0">
+        <Link to="/" className="mr-4 whitespace-nowrap py-1.5 text-lg">
           <h1>
             <i className="fa fa-utensils me-3"></i>Restoran
           </h1>
-          <img src="img/logo.png" alt="Logo" />
+          {/* <img src="img/logo.png" alt="Logo" /> */}
         </Link>
-        <button type="button">
-          <span></span>
-        </button>
         <Menu />
       </nav>
-
-      <div>
+      {/* <div>
         <div>
           <div>
             <div>
@@ -43,7 +42,7 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
