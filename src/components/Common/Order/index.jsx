@@ -1,14 +1,12 @@
 import { getOrder } from "../../../services/apiRestaurant";
+import Button from "../Button/Button";
 import SearchOrder from "./SearchOrder";
 
-export default function Order(props) {
+export default function Order() {
   return (
     <div>
       <SearchOrder />
-      <p>
-        We are open until {props.closeHour}:00. Come visit us or order online.
-      </p>
-      <button className="btn">Order</button>
+      <Button type="primary">Order</Button>
     </div>
   );
 }

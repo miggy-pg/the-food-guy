@@ -10,19 +10,13 @@ export default function HomePage() {
   //   const numPizzas = pizzas.Vegetarian.length; // By checking the array length, we can determine if there are any pizzas
 
   return (
-    <div>
+    <>
+      <Header />
       <div>
-        <div>
-          <Header />
-          <div>
-            <CategoryList />
-            <div>
-              <Pizza />
-            </div>
-          </div>
-        </div>
+        <CategoryList />
+        <Pizza />
       </div>
-    </div>
+    </>
   );
 }
 

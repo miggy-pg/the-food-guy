@@ -11,7 +11,7 @@ export default function AppLayout() {
     <div className="mx-auto w-full p-0 px-3">
       {isLoading && <Loader />}
       <NavBar />
-      {/* <Outlet /> */}
+      <Outlet />
     </div>
   );
 }
