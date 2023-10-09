@@ -1,9 +1,11 @@
 import Header from "../components/Common/Header";
-import { CategoryList } from "../components/Management/CategoryList";
 import Pizza from "../components/Common/Pizza";
 import { getMenu } from "../services/apiRestaurant";
 import { useLoaderData } from "react-router-dom";
+import FoodCategory from "../components/Common/FoodCategory";
+import PizzaList from "../components/Management/PizzaList";
 export default function HomePage() {
+  const categories = ["Breakfast", "Lunch", "Dinner"];
   const food = useLoaderData();
   console.log("food: ", food);
   //   const pizzas = pizzaData;
@@ -12,10 +14,17 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <div>
-        <CategoryList />
-        <Pizza />
-      </div>
+      <FoodCategory categories={categories} />
+      <PizzaList>
+        {food.map((item) => (
+          <Pizza
+            key={item.id}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+          />
+        ))}
+      </PizzaList>
     </>
   );
 }
