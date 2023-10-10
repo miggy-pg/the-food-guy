@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import NavBar from "../NavBar";
-import Loader from "../Loader";
+import NavBar from "./NavBar";
+import Loader from "./Loader";
 
 export default function AppLayout() {
   const navigation = useNavigation();

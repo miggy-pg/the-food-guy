@@ -1,17 +1,27 @@
+import { FaCartShopping } from "react-icons/fa6";
+
+function truncate(str, n) {
+  if (str.length <= n) {
+    return str;
+  }
+  const subString = str.slice(0, n - 1); // the original check
+  return subString + " ...";
+}
+
 export default function Pizza({ name, description, price }) {
   return (
-    <div className="mt-4 flex items-start space-x-3">
-      <div className="mt-2 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 ">
-        {/* {React.cloneElement(props.icon, {
-                  className: "w-7 h-7 text-indigo-50",
-                })} */}
+    <div className="mt-3 flex h-[8rem] items-center justify-center space-x-5 bg-white drop-shadow-sm">
+      <div className="mt-2 flex h-11 w-11 flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-cyan-700 ">
+        <h3>{<FaCartShopping className="fill-white" />}</h3>
       </div>
-      <div>
-        <h4 className="flex justify-between text-xl  font-medium text-gray-800 dark:text-gray-200">
+      <div className="w-3/5">
+        <h4 className="flex w-full justify-between text-xl font-medium text-gray-800 dark:text-gray-200">
           <span>{name}</span>
-          <span className="text-primary font-bold">{price}</span>
+          <span className="text-primary font-bold">P{price}</span>
         </h4>
-        <p className="mt-1 text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="mt-1 text-gray-500 dark:text-gray-400">
+          {truncate(description, 60)}
+        </p>
       </div>
     </div>
   );

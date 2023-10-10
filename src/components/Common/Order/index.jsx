@@ -4,10 +4,10 @@ import SearchOrder from "./SearchOrder";
 
 export default function Order() {
   return (
-    <div>
+    <>
       <SearchOrder />
-      <Button type="primary">Order</Button>
-    </div>
+      <Button type="primary">Search</Button>
+    </>
   );
 }
 

@@ -9,7 +9,7 @@ export default function SearchOrder() {
     e.preventDefault();
 
     if (!query) return;
-    navigate(`/order/${query}`);
+    navigate(`/cart/${query}`);
     setQuery("");
   }
 
