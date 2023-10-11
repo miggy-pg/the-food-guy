@@ -22,6 +22,7 @@ export default function HomePage() {
             name={item.name}
             description={item.description}
             price={item.price}
+            type="menu"
           />
         ))}
       </PizzaList>

@@ -1,88 +1,89 @@
+import Container from "../components/Common/Container";
+import Pizza from "../components/Common/Pizza";
+import Button from "../components/Common/Button/Button";
+
 export default function CartPage() {
   return (
-    <div className="flex w-full items-center bg-red-500">
-      <div className="pb-6 pt-6">
-        <h1 className="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl">
-          Cart
-        </h1>
-      </div>
-      <div className="flex sm:space-x-24">
-        <div>
-          <ul>
-            <li className="py-5">Test</li>
-            <article className="flex flex-col space-y-2 xl:space-y-0">
-              <dl>
-                <dt className="sr-only">Published on</dt>
-                <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                  {/* <time dateTime={date}>
-                    {formatDate(date, siteMetadata.locale)}
-                  </time> */}
-                </dd>
-              </dl>
-              <div className="space-y-3">
-                <div>
-                  <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                    {/* <Link
-                      href={`/${path}`}
-                      className="text-gray-900 dark:text-gray-100"
-                    > */}
-                    {/* {title} */}
-                    {/* </Link> */}
-                  </h2>
-                  <div className="flex flex-wrap">
-                    {/* {tags?.map((tag) => (
-                      <Tag key={tag} text={tag} />
-                    ))} */}
-                  </div>
-                </div>
-                <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                  {/* {summary} */}
-                </div>
-              </div>
-            </article>
-          </ul>
+    <Container>
+      <div className="grid w-full ">
+        <div className="mt-3 flex grid-cols-4 items-center justify-center gap-24 bg-green-500 drop-shadow-sm">
+          <h2></h2>
+          <h2>Unit Price</h2>
+          <h2>Quantity</h2>
+          <h2>Total Price</h2>
+          <h2>Actions</h2>
         </div>
       </div>
-    </div>
+      <div className="w-full bg-red-500">
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+        <Pizza
+          name={"Test"}
+          description={"Test"}
+          price={140}
+          className={"mx-auto w-4/5"}
+          type="cart"
+        />
+      </div>
+      <div className="mt-4 w-full ">
+        <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
+          <Button type="primary">Checkout</Button>
+        </h3>
+      </div>
+    </Container>
   );
 }
-
-// {
-//   displayPosts.map((post) => {
-//     const { path, date, title, summary, tags } = post;
-//     return (
-//       <li key={path} className="py-5">
-//         <article className="flex flex-col space-y-2 xl:space-y-0">
-//           <dl>
-//             <dt className="sr-only">Published on</dt>
-//             <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-//               <time dateTime={date}>
-//                 {formatDate(date, siteMetadata.locale)}
-//               </time>
-//             </dd>
-//           </dl>
-//           <div className="space-y-3">
-//             <div>
-//               <h2 className="text-2xl font-bold leading-8 tracking-tight">
-//                 <Link
-//                   href={`/${path}`}
-//                   className="text-gray-900 dark:text-gray-100"
-//                 >
-//                   {title}
-//                 </Link>
-//               </h2>
-//               <div className="flex flex-wrap">
-//                 {tags?.map((tag) => (
-//                   <Tag key={tag} text={tag} />
-//                 ))}
-//               </div>
-//             </div>
-//             <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-//               {summary}
-//             </div>
-//           </div>
-//         </article>
-//       </li>
-//     );
-//   });
-// }

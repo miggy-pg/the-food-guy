@@ -9,7 +9,7 @@ export async function getMenu() {
 }
 
 export async function getOrder(id) {
-  const res = await fetch(`${API_URL}/recipe/${id}`);
+  const res = await fetch(`${API_URL}/${id}`);
   if (!res.ok) throw new Error(`Couldn't find order #${id}`);
 
   const { recipe } = await res.json();
