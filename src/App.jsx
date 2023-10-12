@@ -1,9 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage, { loader as recipeLoader } from "./pages/HomePage";
 import Error from "./components/Common/Error";
-// import CartPage from "./pages/CartPage";
 import AppLayout from "./components/Common/AppLayout";
-import Order, { loader as orderLoader } from "./components/Common/Order";
+import CartPage from "./pages/CartPage";
+import FoodPage, { loader as foodLoader } from "./pages/FoodPage";
 
 const router = createBrowserRouter([
   {
@@ -11,13 +11,10 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <HomePage />, loader: recipeLoader },
-      // { path: "/cart", element: <CartPage /> },
+      // { path: "/menu", element: <MenuPage /> },
+      { path: "/menu/:orderId", element: <FoodPage />, loader: foodLoader },
+      { path: "/cart", element: <CartPage /> },
       // { path: "/order/new", element: <CreateOrder /> },
-      {
-        path: "/cart",
-        element: <Order />,
-        loader: orderLoader,
-      },
     ],
   },
 ]);

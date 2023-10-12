@@ -22,62 +22,6 @@ export default function CartPage() {
           className={"mx-auto w-4/5"}
           type="cart"
         />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
       </div>
       <div className="mt-4 w-full ">
         <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
@@ -87,3 +31,7 @@ export default function CartPage() {
     </Container>
   );
 }
+
+// we will have a Checkout button that will call a loader function (which basically calls an API)
+// that will process our transaction
+// we will also have a Cancel button that will clear our cart

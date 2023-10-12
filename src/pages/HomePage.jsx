@@ -4,12 +4,10 @@ import { getMenu } from "../services/apiRestaurant";
 import { useLoaderData } from "react-router-dom";
 import FoodCategory from "../components/Management/FoodCategoryList";
 import PizzaList from "../components/Management/PizzaList";
+
 export default function HomePage() {
   const categories = ["Breakfast", "Lunch", "Dinner"];
   const food = useLoaderData();
-  console.log("food: ", food);
-  //   const pizzas = pizzaData;
-  //   const numPizzas = pizzas.Vegetarian.length; // By checking the array length, we can determine if there are any pizzas
 
   return (
     <>

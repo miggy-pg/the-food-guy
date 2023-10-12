@@ -4,7 +4,7 @@ function truncate(str, n) {
   if (str.length <= n) {
     return str;
   }
-  const subString = str.slice(0, n - 1); // the original check
+  const subString = str.slice(0, n - 1);
   return subString + " ...";
 }
 
@@ -21,7 +21,7 @@ export default function Pizza({ name, description, price, className, type }) {
   return (
     <div className={styles[type]}>
       <div className="mt-2 flex h-11 w-11 flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-cyan-700 ">
-        <h3>{<FaCartShopping className="fill-white" />}</h3>
+        {<FaCartShopping className="fill-white" />}
       </div>
       <div className="w-3/5">
         <h4 className="flex w-full justify-between text-xl font-medium text-gray-800 dark:text-gray-200">
