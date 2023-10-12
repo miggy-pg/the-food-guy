@@ -2,18 +2,19 @@ const API_URL = "http://localhost:8000/recipe";
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}`);
-
+  console.log("getMenu: ", res);
   if (!res.ok) throw new Error("Response is NOT ok");
 
   return await res.json();
 }
 
 export async function getOrder(id) {
-  const res = await fetch(`${API_URL}/${id}`);
+  console.log("id: ", id);
+  const res = await fetch(`${API_URL}/cart/${id}`);
+  console.log("getOrder: ", res);
   if (!res.ok) throw new Error(`Couldn't find order #${id}`);
 
-  const { recipe } = await res.json();
-  return recipe;
+  return await res.json();
 }
 
 export async function createOrder(newOrder) {
