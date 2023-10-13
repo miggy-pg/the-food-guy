@@ -10,11 +10,3 @@ export default function Order() {
     </>
   );
 }
-
-// export async function loader({ params }) {
-//   // useParams cannot be used here since it only works for components and not on regular function
-//   console.log("params: ", params);
-//   const order = await getOrder(params.orderId);
-//   console.log(order);
-//   return order;
-// }

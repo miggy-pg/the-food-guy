@@ -4,25 +4,57 @@ import Container from "../components/Common/Container";
 import { getOrder } from "../services/apiRestaurant";
 
 export default function FoodPage() {
-  console.log(useLoaderData());
+  const { id, image, description, name, price, tag } = useLoaderData();
 
   return (
-    <Container>
-      <div className="grid w-full "></div>
-      <div className="w-full bg-red-500">
-        {/* <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        /> */}
+    <Container className="mb-20 flex flex-wrap items-center lg:flex-nowrap lg:gap-10 ">
+      <div className="mx-auto flex w-3/5 gap-10">
+        <div>
+          <img
+            src={image}
+            width="500"
+            height="auto"
+            alt="Benefits"
+            className={"object-cover"}
+            placeholder="blur"
+            // blurDataURL={data.image.src}
+          />
+        </div>
+        <div className="my-20 flex w-full space-x-3 ">
+          <div>
+            <p className="mt-1 text-gray-500 dark:text-gray-400">P{price}</p>
+            <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+              {name}
+            </h4>
+            <p className="mt-1 text-gray-500 dark:text-gray-400">
+              {description}
+            </p>
+            <Button type="primary">Checkout</Button>
+          </div>
+        </div>
       </div>
-      <div className="mt-4 w-full ">
+
+      {/* <div
+        className={`flex w-full flex-wrap items-center lg:w-1/2 lg:justify-end`}
+      >
+        <div>
+          <div className="mt-4 flex w-full flex-col">
+            <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
+              {name}
+            </h3>
+
+            <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-xl">
+              {price}
+            </p>
+          </div>
+
+          <div className="mt-5 w-full"></div>
+        </div>
+      </div> */}
+      {/* <div className="mt-4 w-full ">
         <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
-          <Button type="primary">Checkout</Button>
         </h3>
-      </div>
+      </div> */}
     </Container>
   );
 }
