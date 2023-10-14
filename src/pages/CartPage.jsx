@@ -1,8 +1,13 @@
 import Container from "../components/Common/Container";
 import Pizza from "../components/Common/Pizza";
 import Button from "../components/Common/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, getCart } from "../redux/cart/cartSlice";
 
 export default function CartPage() {
+  const carts = useSelector(getCart);
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <div className="grid w-full ">
@@ -15,17 +20,23 @@ export default function CartPage() {
         </div>
       </div>
       <div className="w-full bg-red-500">
-        <Pizza
-          name={"Test"}
-          description={"Test"}
-          price={140}
-          className={"mx-auto w-4/5"}
-          type="cart"
-        />
+        {carts.map((item) => (
+          <Pizza
+            key={item.id}
+            name={item.name}
+            description={""}
+            price={item.unitPrice}
+            className={"mx-auto w-4/5"}
+            type="cart"
+          />
+        ))}
       </div>
       <div className="mt-4 w-full ">
         <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
           <Button type="primary">Checkout</Button>
+          <button type="primary" onClick={() => dispatch(clearCart())}>
+            Clear cart
+          </button>
         </h3>
       </div>
     </Container>
