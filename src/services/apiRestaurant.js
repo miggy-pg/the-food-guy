@@ -27,8 +27,7 @@ export async function createOrder(newOrder) {
       body: JSON.stringify(newOrder),
     });
     if (!res.ok) throw new Error("Response is NOT ok");
-    const { recipe } = await res.json();
-    return recipe;
+    return await res.json();
   } catch {
     throw Error("Error creating order");
   }

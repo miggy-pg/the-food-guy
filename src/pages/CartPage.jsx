@@ -35,3 +35,14 @@ export default function CartPage() {
 // we will have a Checkout button that will call a loader function (which basically calls an API)
 // that will process our transaction
 // we will also have a Cancel button that will clear our cart
+
+export async function action({ request }) {
+  const data = Object.fromEntries(await request.formData());
+  console.log(data);
+  // const order = {
+  //   ...data,
+  //   cart: JSON.parse(data.cart)
+  // };
+
+  return null;
+}

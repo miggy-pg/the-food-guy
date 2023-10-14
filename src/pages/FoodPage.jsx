@@ -7,29 +7,38 @@ export default function FoodPage() {
   const { id, image, description, name, price, tag } = useLoaderData();
 
   return (
-    <Container className="mb-20 flex flex-wrap items-center lg:flex-nowrap lg:gap-10 ">
-      <div className="mx-auto flex w-3/5 gap-10">
-        <div>
+    <Container className="mb-20 flex h-[25rem] flex-wrap items-center lg:flex-nowrap lg:gap-10">
+      <div className="mx-auto flex w-[55rem] gap-10">
+        <div className="h-50 w-50 overflow-hidden rounded-full">
           <img
-            src={image}
-            width="500"
-            height="auto"
+            src={image ? image : ""}
             alt="Benefits"
-            className={"object-cover"}
+            className="h-[25rem] w-full object-cover"
             placeholder="blur"
             // blurDataURL={data.image.src}
           />
         </div>
-        <div className="my-20 flex w-full space-x-3 ">
+        <div className="flex w-[25rem] flex-row">
           <div>
-            <p className="mt-1 text-gray-500 dark:text-gray-400">P{price}</p>
-            <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
-              {name}
-            </h4>
-            <p className="mt-1 text-gray-500 dark:text-gray-400">
-              {description}
-            </p>
-            <Button type="primary">Checkout</Button>
+            <div className="flex h-3/5 flex-col ">
+              <p className="mt-1 text-gray-500 dark:text-gray-400">P{price}</p>
+              <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+                {name}
+              </h4>
+              <p className="mt-1 text-gray-500 dark:text-gray-400">
+                {description}
+              </p>
+            </div>
+            <div className="mt-auto  grid w-full justify-items-end">
+              <span>
+                <Button className="ml-5" type="primary">
+                  Add to cart
+                </Button>
+                <Button className="ml-5" type="primary">
+                  Checkout
+                </Button>
+              </span>
+            </div>
           </div>
         </div>
       </div>
