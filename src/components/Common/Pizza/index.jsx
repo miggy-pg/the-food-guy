@@ -1,7 +1,9 @@
 import { FaCartShopping } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addItem } from "../../../redux/cart/cartSlice";
+import { addItem, getCartItemsCount } from "../../../redux/cart/cartSlice";
+import DeleteItem from "../Cart/DeleteItem";
+import UpdateItemQuantity from "../Cart/UpdateItemQuantity";
 
 function truncate(str, n) {
   if (str.length <= n) {
@@ -20,6 +22,8 @@ export default function Pizza({
   id,
 }) {
   const dispatch = useDispatch();
+
+  const currentQuantity = useSelector(getCartItemsCount(id));
 
   const base = `mt-3 flex h-[8rem] items-center justify-center space-x-5 bg-white drop-shadow-sm ${
     className ? className : ""
@@ -60,6 +64,8 @@ export default function Pizza({
           {truncate(description, 60)}
         </p>
       </Link>
+      <UpdateItemQuantity id={id} currentQuantity={currentQuantity} />
+      {currentQuantity > 0 && <DeleteItem id={id} />}
     </div>
   );
 }

@@ -12,6 +12,7 @@ const cartSlice = createSlice({
       state.cart.push(action.payload);
     },
     deleteItem(state, action) {
+      console.log("deleteItem", action);
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
     increaseItemQuantity(state, action) {
@@ -24,6 +25,9 @@ const cartSlice = createSlice({
       const item = state.cart.find((item) => item.id === action.payload);
       item.quantity--;
       item.totalPrice = item.quantity * item.unitPrice;
+
+      // trick for calling the deleteItem reducer
+      if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
     clearCart(state) {
       state.cart = [];

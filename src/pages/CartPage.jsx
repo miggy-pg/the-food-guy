@@ -3,10 +3,16 @@ import Pizza from "../components/Common/Pizza";
 import Button from "../components/Common/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart } from "../redux/cart/cartSlice";
+import EmptyCart from "../components/Common/Cart/EmptyCart";
+import { redirect } from "react-router-dom";
+import store from "../redux/store";
+import { createOrder } from "../services/apiRestaurant";
 
 export default function CartPage() {
   const carts = useSelector(getCart);
   const dispatch = useDispatch();
+
+  if (!carts.length) return <EmptyCart />;
 
   return (
     <Container>
@@ -33,6 +39,7 @@ export default function CartPage() {
       </div>
       <div className="mt-4 w-full ">
         <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
+          {/* TODO: add Checkout page and insert Final price in the button */}
           <Button type="primary">Checkout</Button>
           <button type="primary" onClick={() => dispatch(clearCart())}>
             Clear cart
@@ -52,8 +59,13 @@ export async function action({ request }) {
   console.log(data);
   // const order = {
   //   ...data,
-  //   cart: JSON.parse(data.cart)
+  //   cart: JSON.parse(data.cart),
   // };
 
+  // const newOrder = await createOrder(order);
+
+  // clear cart after creating an order
+  store.dispatch(clearCart());
+  // return redirect(`/checkout/${newOrder.id}`);
   return null;
 }
