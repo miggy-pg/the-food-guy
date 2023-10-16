@@ -7,6 +7,7 @@ import EmptyCart from "../components/Common/Cart/EmptyCart";
 import { redirect } from "react-router-dom";
 import store from "../redux/store";
 import { createOrder } from "../services/apiRestaurant";
+import { fetchAddress } from "../redux/user/userSlice";
 
 export default function CartPage() {
   const carts = useSelector(getCart);
@@ -44,6 +45,7 @@ export default function CartPage() {
           <button type="primary" onClick={() => dispatch(clearCart())}>
             Clear cart
           </button>
+          <button onClick={() => dispatch(fetchAddress())}>Get position</button>
         </h3>
       </div>
     </Container>

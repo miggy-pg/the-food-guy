@@ -5,6 +5,7 @@ import AppLayout from "./components/Common/AppLayout";
 import CartPage, { action as createOrder } from "./pages/CartPage";
 import FoodPage, { loader as foodLoader } from "./pages/FoodPage";
 import LoginPage from "./pages/LoginPage";
+// import { action as updateOrderAction } from "./components/Common/Order/UpdateOrder";
 
 const router = createBrowserRouter([
   {
