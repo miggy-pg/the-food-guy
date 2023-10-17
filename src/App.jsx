@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomePage, { loader as recipeLoader } from "./pages/HomePage";
+import MenuPage, { loader as recipeLoader } from "./pages/MenuPage";
+import HomePage from "./pages/HomePage";
 import Error from "./components/Common/Error";
 import AppLayout from "./components/Common/AppLayout";
 import CartPage, { action as createOrder } from "./pages/CartPage";
@@ -12,9 +13,9 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <HomePage />, loader: recipeLoader },
+      { path: "/", element: <HomePage /> },
       { path: "/user/login", element: <LoginPage /> },
-      // { path: "/menu", element: <MenuPage /> },
+      { path: "/menu", element: <MenuPage />, loader: recipeLoader },
       { path: "/menu/:orderId", element: <FoodPage />, loader: foodLoader },
       {
         path: "/cart",

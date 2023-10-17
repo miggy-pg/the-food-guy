@@ -26,7 +26,7 @@ export default function CartPage() {
           <h2>Actions</h2>
         </div>
       </div>
-      <div className="w-full bg-red-500">
+      <div className="w-full">
         {carts.map((item) => (
           <Pizza
             key={item.id}
