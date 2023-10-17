@@ -16,39 +16,42 @@ export default function CartPage() {
   if (!carts.length) return <EmptyCart />;
 
   return (
-    <Container>
-      <div className="grid w-full ">
-        <div className="mt-3 flex grid-cols-4 items-center justify-center gap-24 bg-green-500 drop-shadow-sm">
-          <h2></h2>
-          <h2>Unit Price</h2>
-          <h2>Quantity</h2>
-          <h2>Total Price</h2>
-          <h2>Actions</h2>
+    <body className="work-sans bg-white text-base leading-normal tracking-normal text-gray-600">
+      <Container>
+        <div className="grid w-full ">
+          <div className="mt-3 flex grid-cols-4 items-center justify-center gap-24 bg-green-500 drop-shadow-sm">
+            <h2></h2>
+            <h2>Unit Price</h2>
+            <h2>Quantity</h2>
+            <h2>Total Price</h2>
+            <h2>Actions</h2>
+          </div>
         </div>
-      </div>
-      <div className="w-full bg-red-500">
-        {carts.map((item) => (
-          <Pizza
-            key={item.id}
-            name={item.name}
-            description={""}
-            price={item.unitPrice}
-            className={"mx-auto w-4/5"}
-            type="cart"
-          />
-        ))}
-      </div>
-      <div className="mt-4 w-full ">
-        <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
-          {/* TODO: add Checkout page and insert Final price in the button */}
-          <Button type="primary">Checkout</Button>
-          <button type="primary" onClick={() => dispatch(clearCart())}>
-            Clear cart
-          </button>
-          <button onClick={() => dispatch(fetchAddress())}>Get position</button>
-        </h3>
-      </div>
-    </Container>
+        <div className="container mx-auto flex flex-wrap items-center pb-12 pt-4">
+          {carts.map((item) => (
+            <Pizza
+              key={item.id}
+              name={item.name}
+              description={""}
+              price={item.unitPrice}
+              type="cart"
+            />
+          ))}
+        </div>
+        <div className="mt-4 w-full ">
+          <h3 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight">
+            {/* TODO: add Checkout page and insert Final price in the button */}
+            <Button type="primary">Checkout</Button>
+            <button type="primary" onClick={() => dispatch(clearCart())}>
+              Clear cart
+            </button>
+            <button onClick={() => dispatch(fetchAddress())}>
+              Get position
+            </button>
+          </h3>
+        </div>
+      </Container>
+    </body>
   );
 }
 

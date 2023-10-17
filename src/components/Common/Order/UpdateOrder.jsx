@@ -1,4 +1,3 @@
-import React from "react";
 import { useFetcher } from "react-router-dom";
 import { updateOrder } from "../../../services/apiRestaurant";
 
