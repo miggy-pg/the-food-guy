@@ -24,10 +24,10 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="w-full">
-      <nav className="container relative mx-auto flex flex-wrap items-center justify-between p-8 lg:justify-between xl:px-0">
+    <div className="w-full bg-[#1c1917]">
+      <nav className="container relative mx-auto flex flex-wrap items-center justify-between p-6 lg:justify-between xl:px-0">
         <Link to="/" className="mr-4 whitespace-nowrap py-1.5 text-lg">
-          <h1 className="font-bold">The Pizza Guy</h1>
+          <h1 className="font-white text-white">The Pizza Guy</h1>
           {/* <img src="img/logo.png" alt="Logo" /> */}
         </Link>
         <div className="hidden text-center lg:flex lg:items-center">
@@ -44,7 +44,7 @@ export default function NavBar() {
                 <div className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-500 text-xl text-white">
                   <span className="text-xs">{totalCartQuantity}</span>
                 </div>
-                <FaCartShopping />
+                <FaCartShopping className="fill-white" />
               </span>
             </Link>
 
@@ -60,7 +60,7 @@ export default function NavBar() {
                   to="/user/login"
                   className="ml-7 text-blue-900 hover:text-blue-900"
                 >
-                  <FaCircleUser />
+                  <FaCircleUser className="fill-white" />
                 </Link>
                 <div className="submenu relative ml-3 hidden w-[11rem] rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full">
                   <span className="text-body-color hover:text-primary block rounded px-4 py-[10px] text-sm">
