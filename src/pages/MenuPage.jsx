@@ -10,7 +10,7 @@ export default function MenuPage() {
   const food = useLoaderData();
 
   return (
-    <>
+    <div className="grid h-full w-full bg-section-background bg-center bg-repeat-y">
       <Header />
       <FoodCategory categories={categories} />
       <PizzaList>
@@ -26,7 +26,7 @@ export default function MenuPage() {
           />
         ))}
       </PizzaList>
-    </>
+    </div>
   );
 }
 

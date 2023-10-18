@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaCartShopping, FaCircleUser } from "react-icons/fa6";
 import { MenuItem } from "../Common/Menu/MenuItem";
 import { useSelector } from "react-redux";
@@ -24,10 +24,10 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="w-full bg-[#1c1917]">
-      <nav className="container relative mx-auto flex flex-wrap items-center justify-between p-6 lg:justify-between xl:px-0">
+    <div className="relative w-full bg-[#1c1917]">
+      <nav className="absolute left-0 right-0 z-10 flex w-full flex-wrap justify-between overflow-hidden bg-[#1c1917] p-6 lg:justify-between xl:px-10">
         <Link to="/" className="mr-4 whitespace-nowrap py-1.5 text-lg">
-          <h1 className="font-white text-white">The Pizza Guy</h1>
+          <h1 className="font-white text-white">The Food Guy</h1>
           {/* <img src="img/logo.png" alt="Logo" /> */}
         </Link>
         <div className="hidden text-center lg:flex lg:items-center">
@@ -39,14 +39,18 @@ export default function NavBar() {
                 path={menuItem.path}
               />
             ))}
-            <Link to="/cart" className="text-blue-900 hover:text-blue-900">
+            <NavLink to="/cart" className="ml-4 text-blue-900">
               <span className="flex items-center">
-                <div className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-500 text-xl text-white">
-                  <span className="text-xs">{totalCartQuantity}</span>
-                </div>
-                <FaCartShopping className="fill-white" />
+                {totalCartQuantity > 0 ? (
+                  <div className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-500 text-xl text-white">
+                    <span className="text-xs">{totalCartQuantity}</span>
+                  </div>
+                ) : (
+                  ""
+                )}
+                <FaCartShopping className="fill-white  hover:fill-orange-700 hover:text-white focus:bg-orange-700 focus:text-indigo-500 focus:outline-none active:bg-orange-700" />
               </span>
-            </Link>
+            </NavLink>
 
             {user.username ? (
               <li className="submenu-item group relative mt-0 flex items-center">
@@ -56,12 +60,12 @@ export default function NavBar() {
               </li>
             ) : (
               <li className="submenu-item group relative mt-0 flex items-center">
-                <Link
+                <NavLink
                   to="/user/login"
                   className="ml-7 text-blue-900 hover:text-blue-900"
                 >
                   <FaCircleUser className="fill-white" />
-                </Link>
+                </NavLink>
                 <div className="submenu relative ml-3 hidden w-[11rem] rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full">
                   <span className="text-body-color hover:text-primary block rounded px-4 py-[10px] text-sm">
                     My Account
