@@ -44,8 +44,8 @@ Check out the live demo of the Livre De Cuisine Website: [Demo Link](https://www
 
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat-square)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat-square)
-![Tailwind CSS](https://tailwindcss.com/)
-![Vite](https://vitejs.dev/)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css)
+![Vite](https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite&logoColor=white)
 
 ## Contributing
 
